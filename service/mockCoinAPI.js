@@ -1,0 +1,60 @@
+import { ScreenRect } from "../constants/contant.js";
+
+export const mockCoinAPI = [
+    {
+        id: "coin-1",
+        x: ScreenRect.width + 10,
+        y: ScreenRect.height / 2,
+        width: 20,
+        height: 20,
+        speedX: 9,
+    },
+    {
+        id: "coin-2",
+        x: ScreenRect.width + 40,
+        y: ScreenRect.height / 2,
+        width: 20,
+        height: 20,
+        speedX: 3,
+    },
+    {
+        id: "coin-3",
+        x: ScreenRect.width + 70,
+        y: ScreenRect.height / 2,
+        width: 20,
+        height: 20,
+        speedX: 3,
+    },
+    {
+        id: "coin-4",
+        x: ScreenRect.width + 100,
+        y: ScreenRect.height / 2,
+        width: 20,
+        height: 20,
+        speedX: 3,
+    },
+    {
+        id: "coin-5",
+        x: ScreenRect.width + 190,
+        y: ScreenRect.height / 2,
+        width: 20,
+        height: 20,
+        speedX: 3,
+    },
+    {
+        id: "coin-6",
+        x: ScreenRect.width + 210,
+        y: ScreenRect.height / 2,
+        width: 20,
+        height: 20,
+        speedX: 3,
+    },
+    {
+        id: "coin-7",
+        x: ScreenRect.width + 240,
+        y: ScreenRect.height / 2,
+        width: 20,
+        height: 20,
+        speedX: 3,
+    },
+];
