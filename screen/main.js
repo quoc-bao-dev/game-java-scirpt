@@ -10,7 +10,7 @@ import { Coins } from "./Coins.js";
 
 const animate = () => {
     Coins.moveLeft();
-    Walls.moveLeft();
+    // Walls.moveLeft();
     if (NewBird.y2 < ScreenRect.height) {
         NewBird.down();
     }

@@ -4,13 +4,14 @@ export class Block {
      * @param {x1 ,x2 ,y1, y2} param0 this coordinate dependence Parent Node
      */
     constructor({ id, x, y, width, height }) {
+        this.id = id;
         this.x1 = x;
         this.x2 = x + width;
         this.y1 = y;
         this.y2 = y + height;
         this.width = width;
         this.height = height;
-
+        this.mount = false;
         // privite actribute
 
         //initial style
@@ -18,6 +19,7 @@ export class Block {
             ? document.querySelector(id)
             : document.createElement("div");
         block.classList.add("absolute");
+        block.id = this.id;
 
         const style = block.style;
         if (x) {
@@ -61,10 +63,14 @@ export class Block {
             }
         };
         this.mount = (parentNode) => {
+            this.mount = true;
             parentNode.appendChild(block);
         };
         this.unMount = (parentNode) => {
-            parentNode.removeChild(block);
+            if (this.mount) {
+                parentNode.removeChild(block);
+                this.mount = false;
+            }
         };
         this.setCoor = (coordinate, value) => {
             switch (coordinate) {

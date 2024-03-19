@@ -17,7 +17,7 @@ const enterKey = () => {
 
 export const app = () => {
     Coins.render(mockCoinAPI);
-    Walls.render(mockAPI);
+    // Walls.render(mockAPI);
     keyboard({ spaceKey, enterKey });
     requestAnimationFrame(animate);
 };
