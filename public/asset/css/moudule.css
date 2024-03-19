@@ -1,0 +1,22 @@
+.font-display {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 48px;
+}
+.font-mono {
+    font-family: "Azeret Mono", monospace;
+}
+
+.btn {
+    padding: 12px 32px;
+    border-radius: 5px;
+    background-color: var(--yellow-500);
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+}
+.btn-sm {
+    padding: 8px 24px;
+    font-size: 16px;
+}

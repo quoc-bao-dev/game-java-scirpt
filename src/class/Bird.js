@@ -1,9 +1,10 @@
 import { BirdSpeed } from "../constants/contant.js";
 import { Block } from "./Block.js";
-class Bird extends Block {
-    constructor({ id, x, y, width, height, speedY }) {
+export class BirdClass extends Block {
+    constructor({ id, x, y, width, height, speedY, speedDown }) {
         super({ id, x, y, width, height });
         this.speedY = speedY;
+        this.speedDown = speedDown;
     }
 
     jump() {
@@ -13,17 +14,9 @@ class Bird extends Block {
     }
 
     down() {
-        this.y1 += BirdSpeed.down;
+        const speed = this.speedDown ? this.speedDown : BirdSpeed.down;
+        this.y1 += speed;
         this.updateCoordinates("y1");
         this.setStyle("top", this.y1 + "px");
     }
 }
-const NewBird = new Bird({
-    id: "#box",
-    x: 10,
-    y: 10,
-    width: 30,
-    height: 30,
-    speedY: BirdSpeed.jump,
-});
-export default NewBird;

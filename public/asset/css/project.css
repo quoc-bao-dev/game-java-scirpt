@@ -1,0 +1,36 @@
+.back-ground-base {
+    background-image: url("https://images.pexels.com/photos/219692/pexels-photo-219692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.intro {
+    width: 60%;
+}
+
+.game-screen {
+    width: 930px;
+    height: 560px;
+    background-color: white;
+}
+
+.socer-show {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 999;
+
+    background-color: var(--primary-1);
+}
+
+.group-left {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 999;
+}
+
+.border-game-screen {
+    border: 16px var(--primary-1) solid;
+}

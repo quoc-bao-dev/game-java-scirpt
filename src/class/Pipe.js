@@ -1,5 +1,5 @@
 import { Block } from "./Block.js";
-export class Pipe extends Block {
+export class PipeClass extends Block {
     constructor({ id, x, y, width, height, speedX }) {
         super({ id, x, y, width, height });
         this.speedX = speedX;

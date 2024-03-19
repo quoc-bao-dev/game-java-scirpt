@@ -1,8 +1,9 @@
-import { Pipe } from "./Pipe.js";
+import { PipeClass } from "./Pipe.js";
 
-export class Coin extends Pipe {
+export class CoinClass extends PipeClass {
     constructor({ id, x, y, width, height, speedX }) {
         super({ id, x, y, width, height, speedX });
+        this.isEarned = false;
     }
     earned(parentNode) {
         // handle UI
