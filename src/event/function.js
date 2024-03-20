@@ -8,10 +8,27 @@ const startGame = () => {
 const birdJump = () => {
     Bird.jump();
 };
+
+const birdMoveUp = () => {
+    Bird.moveUp();
+};
+const birdMoveDown = () => {
+    Bird.moveDown();
+};
+const birdSpeedUp = () => {
+    Bird.speedUp();
+};
+const birdSpeedNor = () => {
+    Bird.speedNormal();
+};
 export const eventHandler = (() => {
     return {
         birdJump,
         pauseGame,
         startGame,
+        birdMoveUp,
+        birdMoveDown,
+        birdSpeedUp,
+        birdSpeedNor,
     };
 })();

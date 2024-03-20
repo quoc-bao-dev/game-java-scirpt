@@ -3,11 +3,30 @@ import { keyboard } from "./keyboard.js";
 import { mouse } from "./mouse.js";
 
 const enterKey = () => {};
-const spaceKey = () => {
-    eventHandler.birdJump();
-};
+const wKey = eventHandler.birdMoveUp;
+const sKey = eventHandler.birdMoveDown;
+const upKey = eventHandler.birdMoveUp;
+const downKey = eventHandler.birdMoveDown;
+const spaceKeyUp = eventHandler.birdSpeedNor;
+const spaceKey = eventHandler.birdSpeedUp;
+const upKeyPress = eventHandler.birdMoveUp;
+const downKeyPress = eventHandler.birdMoveDown;
+const wKeyPress = eventHandler.birdMoveUp;
+const sKeyPress = eventHandler.birdMoveDown;
 
 export const initEvent = () => {
     mouse();
-    keyboard({ enterKey, spaceKey });
+    keyboard({
+        enterKey,
+        spaceKey,
+        wKey,
+        sKey,
+        upKey,
+        downKey,
+        spaceKeyUp,
+        upKeyPress,
+        downKeyPress,
+        wKeyPress,
+        sKeyPress,
+    });
 };

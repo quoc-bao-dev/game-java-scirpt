@@ -6,7 +6,9 @@ export class BirdClass extends Block {
         this.speedY = speedY;
         this.speedDown = speedDown;
     }
-
+    setSpeedY(value) {
+        this.speedY = value;
+    }
     jump() {
         this.y1 -= this.speedY;
         this.updateCoordinates("y1");
@@ -18,5 +20,11 @@ export class BirdClass extends Block {
         this.y1 += speed;
         this.updateCoordinates("y1");
         this.setStyle("top", this.y1 + "px");
+    }
+    moveUp() {
+        this.setCoor("y1", this.y1 - this.speedY);
+    }
+    moveDown() {
+        this.setCoor("y1", this.y1 + this.speedY);
     }
 }

@@ -1,10 +1,8 @@
 import animate from "../../animate/main.js";
-import { mockAPI } from "../../service/mockAPI.js";
-import { mockCoinAPI } from "../../service/mockCoinAPI.js";
+import { Plane } from "../../factory/buildObstacle.js";
 import Bird from "../bird/bird.js";
-import Coins from "../coins/coins.js";
+import Planes from "../planes/planes.js";
 import Score from "../score/score.js";
-import Walls from "../walls/walls.js";
 
 const Game = (() => {
     const state = {
@@ -19,10 +17,9 @@ const Game = (() => {
         requestAnimationFrame(animate);
     };
     const start = () => {
-        Walls.render(mockAPI);
+        Planes.render([Plane.create()]);
         Bird.start();
         Score.init();
-        Coins.render(mockCoinAPI);
         requestAnimationFrame(animate);
     };
     return {
