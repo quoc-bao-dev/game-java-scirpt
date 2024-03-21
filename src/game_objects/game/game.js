@@ -1,12 +1,10 @@
 import animate from "../../animate/main.js";
-import { Plane } from "../../factory/buildObstacle.js";
-import Bird from "../bird/bird.js";
-import Planes from "../planes/planes.js";
-import Score from "../score/score.js";
+import gameControl from "../game_control/gameControl.js";
 
 const Game = (() => {
     const state = {
         isPause: false,
+        level: 0,
     };
     const isPause = () => state.isPause;
     const pause = () => {
@@ -14,14 +12,13 @@ const Game = (() => {
     };
     const play = () => {
         state.isPause = false;
+        gameControl.start();
         requestAnimationFrame(animate);
     };
     const start = () => {
-        Planes.render([Plane.create()]);
-        Bird.start();
-        Score.init();
         requestAnimationFrame(animate);
     };
+
     return {
         start,
         pause,

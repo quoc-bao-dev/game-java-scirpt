@@ -3,9 +3,11 @@ import manage from "../manage/manage.js";
 import Game from "../game/game.js";
 import { checkCollision } from "../../function/checkCollision.js";
 import Bird from "../bird/bird.js";
+import Boss from "../boss/Boss.js";
 
 const Shots = (() => {
     const base = manage();
+
     return {
         logger() {
             console.log(base.list);

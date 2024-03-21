@@ -1,9 +1,11 @@
 import { ScreenSpeed } from "../constants/contant.js";
 import randNum from "../function/randNum.js";
+import { scriptHouseLv1 } from "../script/level1/scriptHouseLv1.js";
 
 export const House = (() => {
     const wOption = [80, 100, 120];
     const hOption = [150, 150, 200, 200, 250, 300, 350];
+    let index = 0;
     let x = 960;
     let y = 0;
     let width = 50;
@@ -13,11 +15,12 @@ export const House = (() => {
         setX(value) {
             if (value) x = value;
         },
+        getX: () => x,
         hash() {
-            width = wOption[randNum(0, wOption.length - 1)];
-            height = hOption[randNum(0, hOption.length - 1)];
-            x += width;
+            height = scriptHouseLv1[index].height;
+            width = scriptHouseLv1[index].width;
             y = 560 - height;
+            scriptHouseLv1.shift();
         },
         create() {
             this.hash();
@@ -29,6 +32,9 @@ export const House = (() => {
                 height,
                 speedX: ScreenSpeed.moveLeft,
             };
+        },
+        getWitdth() {
+            return width;
         },
     };
 })();

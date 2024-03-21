@@ -1,5 +1,4 @@
 import { PipeClass } from "../../class/Pipe.js";
-import { Plane } from "../../factory/buildObstacle.js";
 import { checkCollision } from "../../function/checkCollision.js";
 import Bird from "../bird/bird.js";
 import Game from "../game/game.js";
@@ -21,8 +20,6 @@ const Planes = (() => {
             base.list.forEach((elm) => {
                 elm.moveLeft();
                 if (elm.x2 < 0) {
-                    Plane.setX(960);
-                    this.render([Plane.create()]);
                     base.unMountElm(elm);
                 }
                 if (elm.x1 < 200 && checkCollision(Bird.getXY(), elm.getXY())) {

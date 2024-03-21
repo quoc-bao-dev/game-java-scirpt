@@ -6,7 +6,6 @@ import manage from "../manage/manage.js";
 import Score from "../score/score.js";
 
 const Coins = (() => {
-    const loop = true;
     const base = manage();
     return {
         ...base,
@@ -20,8 +19,7 @@ const Coins = (() => {
         move() {
             base.list.forEach((elm) => {
                 elm.moveLeft();
-                /// test loop
-                if (loop && elm.x2 <= 0) elm.x1 = ScreenRect.width();
+                if (elm.x2 <= 0) base.unMountElm(elm);
                 if (checkCollision(elm.getXY(), Bird.getXY())) {
                     base.unMountElm(elm);
                     Score.increa();

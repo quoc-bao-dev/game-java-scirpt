@@ -13,6 +13,7 @@ const upKeyPress = eventHandler.birdMoveUp;
 const downKeyPress = eventHandler.birdMoveDown;
 const wKeyPress = eventHandler.birdMoveUp;
 const sKeyPress = eventHandler.birdMoveDown;
+const spaceKeyPress = eventHandler.birdSpeedUp;
 
 export const initEvent = () => {
     mouse();
@@ -28,5 +29,6 @@ export const initEvent = () => {
         downKeyPress,
         wKeyPress,
         sKeyPress,
+        spaceKeyPress,
     });
 };

@@ -50,21 +50,21 @@ export const keyboard = ({
     document.addEventListener("keypress", (e) => {
         const keyboard = e.key;
         switch (keyboard) {
-            case "ArrowUp":
-                upKeyPress();
+            case " ":
+                spaceKeyPress();
                 break;
-            case "ArrowDown":
-                downKeyPress();
-                break;
-            case "w":
-                wKeyPress();
-                break;
-            case "s":
-                sKeyPress();
-                break;
-            case "m":
-                console.log("keypress");
-                break;
+            // case "ArrowUp":
+            //     upKeyPress();
+            //     break;
+            // case "ArrowDown":
+            //     downKeyPress();
+            //     break;
+            // case "w":
+            //     wKeyPress();
+            //     break;
+            // case "s":
+            //     sKeyPress();
+            //     break;
 
             default:
                 break;

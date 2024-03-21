@@ -4,6 +4,9 @@ export class PipeClass extends Block {
         super({ id, x, y, width, height });
         this.speedX = speedX;
     }
+    getSpeed() {
+        return this.speedX;
+    }
     moveLeft() {
         this.x1 -= this.speedX;
         this.updateCoordinates("x1");

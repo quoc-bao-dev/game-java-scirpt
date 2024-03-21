@@ -20,7 +20,7 @@ export class BossClass extends Block {
         this.setCoor("x1", this.x1 - this.speedX);
     }
     moveRight() {
-        this.setCoor("x2", this.x1 + this.speedX);
+        this.setCoor("x1", this.x1 + this.speedX);
     }
     moveUp() {
         this.setCoor("y1", this.y1 - this.speedY);
