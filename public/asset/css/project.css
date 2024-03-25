@@ -34,3 +34,29 @@
 .border-game-screen {
     border: 16px var(--primary-1) solid;
 }
+
+.close-btn {
+    top: 20px;
+    right: 20px;
+}
+
+.count-down-box {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.count-alert {
+    font-size: 96px;
+    font-weight: 900;
+    border-radius: 999px;
+    width: 180px;
+    height: 180px;
+}
+
+.start-screen {
+    width: 500px;
+}
+
+.get-score {
+    font-size: 96px;
+    font-weight: 900;
+}

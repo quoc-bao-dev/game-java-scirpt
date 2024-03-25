@@ -19,9 +19,17 @@ const Bird = (() => {
         speedY: speedYUp,
         speedDown: speedYDown,
     });
+    const caches = {
+        x: 100,
+        y: 200,
+    };
     bird.setStyle("backgroundColor", "#333");
     bird.setStyle("z-index", "333");
     return {
+        reset() {
+            bird.setCoor("x1", caches.x);
+            bird.setCoor("y1", caches.y);
+        },
         start() {
             bird.mount(ScreenNode.node());
         },

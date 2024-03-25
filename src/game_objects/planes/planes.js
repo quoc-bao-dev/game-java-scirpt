@@ -24,6 +24,7 @@ const Planes = (() => {
                 }
                 if (elm.x1 < 200 && checkCollision(Bird.getXY(), elm.getXY())) {
                     Game.pause();
+                    Game.over();
                 }
             });
         },

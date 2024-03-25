@@ -1,5 +1,5 @@
 export const StarScreen = () => `
-<div class="intro bg-white border-round p-6">
+<div class="intro bg-white border-round start-screen p-6">
                     <h1 class="text-center font-display">JS Game</h1>
                     <div class="flex justify-content-center mt-6">
                         <input type="text"

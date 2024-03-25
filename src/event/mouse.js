@@ -1,4 +1,5 @@
 import Game from "../game_objects/game/game.js";
+import Menu from "../ui_objects/menu.js";
 import { eventHandler } from "./function.js";
 
 const setClick = (selector, callback) => {
@@ -14,8 +15,10 @@ export const mouse = () => {
     });
 
     setClick("#btn-pause", () => {
-        if (!Game.isPause()) Game.pause();
-        else {
+        if (!Game.isPause()) {
+            Menu.show();
+            Game.pause();
+        } else {
             Game.play();
         }
     });

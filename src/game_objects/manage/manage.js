@@ -4,6 +4,9 @@ const manage = () => {
 
     return {
         list,
+        clear() {
+            list.length = 0;
+        },
         logger() {
             console.log(list);
         },

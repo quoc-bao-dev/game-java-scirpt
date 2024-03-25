@@ -5,7 +5,16 @@ export class BirdClass extends Block {
         super({ id, x, y, width, height });
         this.speedY = speedY;
         this.speedDown = speedDown;
+        this.caches = {
+            x,
+            y,
+        };
+        this.reset = () => {
+            this.setCoor("x1", caches.x);
+            this.setCoor("y1", caches.y);
+        };
     }
+
     setSpeedY(value) {
         this.speedY = value;
     }

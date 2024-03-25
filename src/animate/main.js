@@ -1,14 +1,12 @@
-import Bird from "../game_objects/bird/bird.js";
+import Control from "../control/control.js";
 import Game from "../game_objects/game/game.js";
-import gameControl from "../game_objects/game_control/gameControl.js";
 /**
  * update screen
  * in here, we handle logic to update screen when frame update 60fps
  */
 const animate = () => {
-    Bird.move();
-    gameControl.loop();
-    if (!Game.isPause()) requestAnimationFrame(animate);
+    Control.main();
+    if (!Game.isPause() && !Game.isEnd()) requestAnimationFrame(animate);
 };
 
 export default animate;

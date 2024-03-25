@@ -51,7 +51,6 @@ export const keyboard = ({
         const keyboard = e.key;
         switch (keyboard) {
             case " ":
-                spaceKeyPress();
                 break;
             // case "ArrowUp":
             //     upKeyPress();

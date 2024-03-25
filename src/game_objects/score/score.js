@@ -5,6 +5,7 @@ const Score = (() => {
     let scoreElm = getNode(scoreSelector);
     return {
         init() {
+            score = 0;
             scoreElm = getNode(scoreSelector);
             scoreElm.innerHTML = score;
         },
@@ -23,6 +24,9 @@ const Score = (() => {
         minus(value) {
             score -= value;
             scoreElm.innerHTML = score;
+        },
+        getScore() {
+            return score;
         },
     };
 })();

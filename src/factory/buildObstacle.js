@@ -1,6 +1,5 @@
 import { ScreenSpeed } from "../constants/contant.js";
 import randNum from "../function/randNum.js";
-import { scriptHouseLv1 } from "../script/level1/scriptHouseLv1.js";
 
 export const House = (() => {
     const wOption = [80, 100, 120];
@@ -17,10 +16,7 @@ export const House = (() => {
         },
         getX: () => x,
         hash() {
-            height = scriptHouseLv1[index].height;
-            width = scriptHouseLv1[index].width;
             y = 560 - height;
-            scriptHouseLv1.shift();
         },
         create() {
             this.hash();

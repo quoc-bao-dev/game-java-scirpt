@@ -15,8 +15,20 @@
     color: white;
     display: inline-block;
     font-size: 20px;
+    cursor: pointer;
 }
 .btn-sm {
     padding: 8px 24px;
     font-size: 16px;
+}
+.modal {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-content {
+    width: 600px;
 }

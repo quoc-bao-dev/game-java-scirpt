@@ -11,7 +11,7 @@ export class Block {
         this.y2 = y + height;
         this.width = width;
         this.height = height;
-        this.mount = false;
+        this.isMount = false;
         // privite actribute
 
         //initial style
@@ -63,13 +63,13 @@ export class Block {
             }
         };
         this.mount = (parentNode) => {
-            this.mount = true;
+            this.isMount = true;
             parentNode.appendChild(block);
         };
         this.unMount = (parentNode) => {
-            if (this.mount) {
+            if (this.isMount) {
                 parentNode.removeChild(block);
-                this.mount = false;
+                this.isMount = false;
             }
         };
         this.setCoor = (coordinate, value) => {

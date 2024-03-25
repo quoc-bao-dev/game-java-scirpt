@@ -1,12 +1,14 @@
 import { BossClass } from "../../class/Boss.js";
 import { ScreenNode } from "../../constants/nodeElm.js";
-import { scriptBossLv1 } from "../../script/level1/scriptBossLv1.js";
 import Shots from "../shots/shots.js";
 
 const Boss = (() => {
     const counter = {
         frameUp: 0,
         frameDown: 0,
+        frameBack: 0,
+        frameForward: 0,
+        frameStop: 0,
     };
     const state = {
         start: false,
@@ -22,7 +24,12 @@ const Boss = (() => {
         speedX: 1,
         speedY: 1,
     });
+    const caches = {
+        x: 960,
+        y: 560 / 2 - 100,
+    };
     boss.setStyle("backgroundColor", "#323212");
+    boss.setStyle("z-index", "212");
 
     const boosGun = () => {
         const shot = {
@@ -34,56 +41,73 @@ const Boss = (() => {
         Shots.render([shot]);
     };
     return {
+        reset() {
+            boss.setCoor("x1", caches.x);
+            boss.setCoor("y1", caches.y);
+        },
+        setUp(val) {
+            counter.frameUp = val;
+        },
+        setDown(val) {
+            counter.frameDown = val;
+        },
+        setBack(val) {
+            counter.frameBack = val;
+        },
+        setForward(val) {
+            counter.frameForward = val;
+        },
+        setStop(val) {
+            counter.frameStop = val;
+        },
         move() {
-            if (scriptBossLv1.length === 0) {
-                Boss.end();
-            }
-            if (state.isUpdate && scriptBossLv1.length > 0) {
-                state.isUpdate = false;
-                setTimeout(() => {
-                    counter.frameDown = scriptBossLv1[0].frameDown;
-                    counter.frameUp = scriptBossLv1[0].frameUp;
-                }, scriptBossLv1[0].time);
-            }
-            if (counter.frameUp > 0 && boss.y1 > 0) {
-                boss.moveUp();
+            if (counter.frameUp > 0) {
+                if (boss.y1 > 0) boss.moveUp();
                 counter.frameUp--;
                 if (counter.frameUp <= 0) {
                     state.isUpdate = true;
-                    Boss.gun();
-                    scriptBossLv1.shift();
                 }
             }
-            if (counter.frameDown > 0 && boss.y2 < 560) {
-                boss.moveDown();
+            if (counter.frameDown > 0) {
+                if (boss.y2 < 560) boss.moveDown();
                 counter.frameDown--;
                 if (counter.frameDown <= 0) {
                     state.isUpdate = true;
-                    Boss.gun();
-                    scriptBossLv1.shift();
                 }
             }
-            if (state.start) {
-                if (boss.x1 > 800 && state.start) {
-                    boss.moveLeft();
-                } else {
+
+            if (counter.frameBack > 0) {
+                if (boss.x1 < 960) boss.moveRight();
+                counter.frameBack--;
+                if (counter.frameBack <= 0) {
                     state.isUpdate = true;
-                    state.start = false;
                 }
             }
-            if (state.end) {
-                if (boss.x1 < 960) {
-                    boss.moveRight();
-                } else {
-                    boss.unMount(ScreenNode.node());
+            if (counter.frameForward > 0 && boss.y2 < 560) {
+                if (boss.x1 > 0) boss.moveLeft();
+                counter.frameForward--;
+                if (counter.frameForward <= 0) {
+                    state.isUpdate = true;
                 }
             }
+            if (
+                counter.frameBack == 0 &&
+                counter.frameForward == 0 &&
+                counter.frameUp == 0 &&
+                counter.frameDown == 0 &&
+                counter.frameStop > 0
+            ) {
+                counter.frameStop--;
+            }
         },
-        moveUp() {
-            counter.frameUp = 0;
-        },
-        moveDown() {
-            counter.frameDown = 0;
+        moveDone() {
+            return (
+                counter.frameBack == 0 &&
+                counter.frameForward == 0 &&
+                counter.frameUp == 0 &&
+                counter.frameDown == 0 &&
+                counter.frameStop == 0
+            );
         },
         start() {
             state.start = true;

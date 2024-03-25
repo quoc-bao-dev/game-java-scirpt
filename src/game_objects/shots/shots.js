@@ -1,17 +1,18 @@
 import { ShotClass } from "../../class/Shot.js";
-import manage from "../manage/manage.js";
-import Game from "../game/game.js";
 import { checkCollision } from "../../function/checkCollision.js";
 import Bird from "../bird/bird.js";
-import Boss from "../boss/Boss.js";
+import Game from "../game/game.js";
+import manage from "../manage/manage.js";
 
 const Shots = (() => {
     const base = manage();
 
     return {
+        ...base,
         logger() {
             console.log(base.list);
         },
+
         render(data) {
             data.forEach((item) => {
                 const elm = new ShotClass(item);
@@ -27,6 +28,7 @@ const Shots = (() => {
                 }
                 if (elm.x1 < 200 && checkCollision(Bird.getXY(), elm.getXY())) {
                     Game.pause();
+                    Game.over();
                 }
             });
         },

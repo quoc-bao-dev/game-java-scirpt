@@ -1,9 +1,4 @@
-import { House } from "./src/factory/buildObstacle.js";
+import Message from "./src/ui_objects/messge.js";
+import ModalOver from "./src/ui_objects/modalOver.js";
 
-const list = [];
-
-for (let i = 1; i < 20; i++) {
-    list.push(House.create());
-}
-
-console.log(list);
+ModalOver.show();
