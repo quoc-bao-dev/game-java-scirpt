@@ -26,6 +26,7 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            id: "coin-1",
             index: 1,
             score: null,
             width: 50,
@@ -46,12 +47,13 @@ export const mainScript = [
         distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
-            height: 200,
+            height: 500,
             x: 960,
-            y: 560 - 200,
+            y: 560 - 500,
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            id: "coin-2",
             index: 0,
             score: 20000,
             width: 50,
@@ -78,6 +80,7 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            id: "coin-3",
             index: 0,
             score: 20000,
             width: 50,
@@ -104,6 +107,7 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            id: "coin-4",
             index: 0,
             score: 20000,
             width: 50,
@@ -130,6 +134,7 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            id: "coin-5",
             index: 0,
             score: 20000,
             width: 50,
@@ -156,6 +161,7 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            id: "coin-6",
             index: 0,
             score: 20000,
             width: 50,
@@ -182,6 +188,7 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            id: "coin-7",
             index: 0,
             score: 20000,
             width: 50,

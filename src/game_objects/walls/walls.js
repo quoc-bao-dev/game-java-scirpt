@@ -31,6 +31,7 @@ const Walls = (() => {
     };
     const render = (data) => {
         data.forEach((item) => {
+            console.log(item);
             const elm = new PipeClass(item);
             elm.setStyle("backgroundColor", "#999");
             mountElm(elm);

@@ -1,6 +1,7 @@
 import BlockUI from "../class/Block.UI.js";
 import { ScreenNode } from "../constants/nodeElm.js";
 import Game from "../game_objects/game/game.js";
+import { Router } from "../routes/index.js";
 import handleOutsideClick from "./function/handleClickOutSide.js";
 
 const Menu = (() => {
@@ -30,8 +31,8 @@ const Menu = (() => {
             <p class="pt-3 text-gray-500 line-height-3 px-4">${state.content}</p>
             <div class="pt-5">
                 <div class="flex gap-3 w-fit mx-auto">
-                    <div class="btn" id="restart-btn">Restart</div>
-                    <div class="btn" id="play-btn">Play</div>
+                    <div class="btn" id="restart-btn">Home</div>
+                    <div class="btn" id="play-btn">Resume</div>
                 </div>
             </div>
         </div>
@@ -45,15 +46,19 @@ const Menu = (() => {
     const restart = () => {
         console.log("restart");
     };
+    const goHome = () => {
+        Game.setIsEnd(false);
+        Router.nav("/");
+    };
     const inintEvent = () => {
-        handleOutsideClick(block.node, ".alert-content", close);
+        // handleOutsideClick(block.node, ".alert-content", play);
         block.node
             .querySelector("#close-alert-btn")
             .addEventListener("click", () => {
-                close();
+                play();
             });
         block.node.querySelector("#play-btn").onclick = play;
-        block.node.querySelector("#restart-btn").onclick = restart;
+        block.node.querySelector("#restart-btn").onclick = goHome;
     };
     const close = () => {
         block.unMount(ScreenNode.node());

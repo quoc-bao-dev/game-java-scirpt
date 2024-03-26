@@ -1,5 +1,6 @@
 import { BossClass } from "../../class/Boss.js";
 import { ScreenNode } from "../../constants/nodeElm.js";
+import randNum from "../../function/randNum.js";
 import Shots from "../shots/shots.js";
 
 const Boss = (() => {
@@ -14,6 +15,7 @@ const Boss = (() => {
         start: false,
         end: false,
         isUpdate: false,
+        id: 0,
     };
     const boss = new BossClass({
         id: "boss",
@@ -32,11 +34,13 @@ const Boss = (() => {
     boss.setStyle("z-index", "212");
 
     const boosGun = () => {
+        const id = `shot-${state.id++}`;
         const shot = {
+            id,
             ...boss.getPointGun(),
             width: 80,
             height: 20,
-            speedX: 3,
+            speedX: randNum(3, 10),
         };
         Shots.render([shot]);
     };

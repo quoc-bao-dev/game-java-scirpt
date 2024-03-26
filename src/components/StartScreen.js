@@ -1,5 +1,6 @@
 export const StarScreen = () => `
-<div class="intro bg-white border-round start-screen p-6">
+<div class='p-8 bg-yellow-500 border-round-3xl'>
+<div class="intro bg-white border-round-xl start-screen p-6 shadow-8">
                     <h1 class="text-center font-display">JS Game</h1>
                     <div class="flex justify-content-center mt-6">
                         <input type="text"
@@ -9,4 +10,6 @@ export const StarScreen = () => `
                     <div class="flex justify-content-center mt-4">
                         <div class="btn" id="btn-start">Start</div>
                     </div>
-                </div>`;
+                </div>
+</div>
+`;

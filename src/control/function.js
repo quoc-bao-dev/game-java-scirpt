@@ -12,6 +12,7 @@ const handleScript = (script) => {
         Trigger.subscribe(...script.triggers);
     }
     if (script.house) {
+        console.log(script.house);
         Walls.render([script.house]);
     }
     if (script.coin) {
