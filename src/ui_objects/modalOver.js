@@ -1,5 +1,6 @@
 import BlockUI from "../class/Block.UI.js";
 import { ScreenNode } from "../constants/nodeElm.js";
+import Control from "../control/control.js";
 import Game from "../game_objects/game/game.js";
 import Score from "../game_objects/score/score.js";
 import { Router } from "../routes/index.js";
@@ -41,6 +42,9 @@ const ModalOver = (() => {
     };
     const restart = () => {
         console.log("restart");
+        Game.setIsEnd(true);
+        Router.nav("game");
+        Control.start();
     };
     const inintEvent = () => {
         block.node.querySelector("#home-btn").onclick = goHome;

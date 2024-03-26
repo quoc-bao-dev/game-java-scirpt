@@ -5,7 +5,7 @@ export const StarScreen = () => `
                     <div class="flex justify-content-center mt-6">
                         <input type="text"
                             class="px-3 py-2 border-2 border-gray-300 outline-none border-round w-6 font-semibold text-xl"
-                            value="Player" placeholder="Nick Name">
+                            value="Player" placeholder="Nick Name" id='user-name-input'>
                     </div>
                     <div class="flex justify-content-center mt-4">
                         <div class="btn" id="btn-start">Start</div>

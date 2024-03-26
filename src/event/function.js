@@ -1,9 +1,12 @@
 import Control from "../control/control.js";
 import Bird from "../game_objects/bird/bird.js";
+import User from "../game_objects/user/user.js";
 import { Router } from "../routes/index.js";
 
 const pauseGame = () => {};
 const startGame = () => {
+    const userName = document.querySelector("#user-name-input").value;
+    User.setUserName(userName);
     Router.nav("game");
     Control.start();
 };
