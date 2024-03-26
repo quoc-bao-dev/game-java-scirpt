@@ -1,7 +1,5 @@
 import { ShotClass } from "../../class/Shot.js";
-import { checkCollision } from "../../function/checkCollision.js";
-import Bird from "../bird/bird.js";
-import Game from "../game/game.js";
+import checkBirdBeat from "../../function/checkBirdBeat.js";
 import manage from "../manage/manage.js";
 
 const Shots = (() => {
@@ -26,9 +24,8 @@ const Shots = (() => {
                 if (elm.x2 < 0) {
                     base.unMountElm(elm);
                 }
-                if (elm.x1 < 200 && checkCollision(Bird.getXY(), elm.getXY())) {
-                    Game.pause();
-                    Game.over();
+                if (elm.x1 < 400) {
+                    checkBirdBeat(elm);
                 }
             });
         },

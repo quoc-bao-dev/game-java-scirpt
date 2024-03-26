@@ -39,6 +39,10 @@ export class Block {
             style[actr] = value;
         };
 
+        this.setAttr = (attr, value) => (block[attr] = value);
+
+        this.node = () => block;
+
         this.updateCoordinates = (coordinate) => {
             /**
              * set coordinate by x1 or x2 or y1 or y2

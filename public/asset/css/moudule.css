@@ -32,3 +32,25 @@
 .alert-content {
     width: 600px;
 }
+
+/* Bird */
+#bird {
+    background-image: url("../../../src/game_objects/bird/img/image2.png");
+    background-size: cover;
+}
+.rotate-45-up {
+    transform: rotate(-15deg);
+}
+.rotate-45-down {
+    transform: rotate(15deg);
+}
+
+.bird-immortal {
+    opacity: 50%;
+}
+
+.score-alert {
+    top: -40px;
+    left: 50%;
+    border-radius: 6px;
+}

@@ -1,4 +1,5 @@
 import { getNode, scoreSelector } from "../../constants/nodeElm.js";
+import randNum from "../../function/randNum.js";
 
 const Score = (() => {
     let score = 0;
@@ -10,7 +11,7 @@ const Score = (() => {
             scoreElm.innerHTML = score;
         },
         increa() {
-            score++;
+            score += randNum(5, 6);
             scoreElm.innerHTML = score;
         },
         decrea() {

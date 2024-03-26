@@ -14,10 +14,10 @@ export const mainScript = [
         },
     },
     {
-        triggers: ["wallMove", "planeMove", "coinMove"],
+        triggers: ["wallMove", "planeMove", "coinMove", "scoreSub"],
     },
     {
-        distant: 100 - ScreenSpeed.moveLeft * 2,
+        distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
             height: 300,
@@ -26,13 +26,16 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            index: 1,
+            score: null,
             width: 50,
             height: 50,
             x: 960, // FIXED
             y: 200,
         },
         plane: {
-            width: 20,
+            index: 1,
+            width: 185,
             height: 70,
             x: 960,
             y: 100,
@@ -40,7 +43,7 @@ export const mainScript = [
         },
     },
     {
-        distant: 100 - ScreenSpeed.moveLeft * 2,
+        distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
             height: 200,
@@ -49,13 +52,16 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            index: 0,
+            score: 20000,
             width: 50,
             height: 50,
             x: 960,
             y: 200,
         },
         plane: {
-            width: 20,
+            index: 0,
+            width: 185,
             height: 70,
             x: 960,
             y: 100,
@@ -63,7 +69,7 @@ export const mainScript = [
         },
     },
     {
-        distant: 100 - ScreenSpeed.moveLeft * 2,
+        distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
             height: 200,
@@ -72,13 +78,16 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            index: 0,
+            score: 20000,
             width: 50,
             height: 50,
             x: 960,
             y: 200,
         },
         plane: {
-            width: 20,
+            index: 0,
+            width: 185,
             height: 70,
             x: 960,
             y: 100,
@@ -86,7 +95,7 @@ export const mainScript = [
         },
     },
     {
-        distant: 100 - ScreenSpeed.moveLeft * 2,
+        distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
             height: 200,
@@ -95,13 +104,16 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            index: 0,
+            score: 20000,
             width: 50,
             height: 50,
             x: 960,
             y: 200,
         },
         plane: {
-            width: 20,
+            index: 0,
+            width: 185,
             height: 70,
             x: 960,
             y: 100,
@@ -109,7 +121,7 @@ export const mainScript = [
         },
     },
     {
-        distant: 100 - ScreenSpeed.moveLeft * 2,
+        distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
             height: 200,
@@ -118,13 +130,16 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            index: 0,
+            score: 20000,
             width: 50,
             height: 50,
             x: 960,
             y: 200,
         },
         plane: {
-            width: 20,
+            index: 0,
+            width: 185,
             height: 70,
             x: 960,
             y: 100,
@@ -132,7 +147,7 @@ export const mainScript = [
         },
     },
     {
-        distant: 100 - ScreenSpeed.moveLeft * 2,
+        distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
             height: 200,
@@ -141,13 +156,16 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            index: 0,
+            score: 20000,
             width: 50,
             height: 50,
             x: 960,
             y: 200,
         },
         plane: {
-            width: 20,
+            index: 0,
+            width: 185,
             height: 70,
             x: 960,
             y: 100,
@@ -155,7 +173,7 @@ export const mainScript = [
         },
     },
     {
-        distant: 100 - ScreenSpeed.moveLeft * 2,
+        distant: 200 - ScreenSpeed.moveLeft * 2,
         house: {
             width: 100,
             height: 200,
@@ -164,13 +182,16 @@ export const mainScript = [
             speedX: ScreenSpeed.moveLeft,
         },
         coin: {
+            index: 0,
+            score: 20000,
             width: 50,
             height: 50,
             x: 960,
             y: 200,
         },
         plane: {
-            width: 20,
+            index: 0,
+            width: 185,
             height: 70,
             x: 960,
             y: 100,

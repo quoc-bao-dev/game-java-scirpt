@@ -12,6 +12,8 @@ import { mainScript } from "../script/level1/mainScript.js";
 import handleScript, { listenScript } from "./function.js";
 import Trigger from "./trigger.js";
 import ModalOver from "../ui_objects/modalOver.js";
+import Slider from "../ui_objects/slider.js";
+import showHeart from "../ui_objects/showHeart.js";
 
 const Control = (() => {
     //
@@ -57,6 +59,7 @@ const Control = (() => {
 
     const init = () => {
         console.log("run inti");
+        Trigger.subscribe("scoreUnSub");
         //clear caches
         Bird.reset();
         Boss.reset();
@@ -72,8 +75,10 @@ const Control = (() => {
         curScript = scripts[curIndex];
         Bird.start();
         Score.init();
+        showHeart(Bird.getHeart());
         Game.setIsPause(false);
         Game.setIsEnd(false);
+        Slider.intit();
     };
     const start = () => {
         init();

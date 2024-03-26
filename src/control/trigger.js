@@ -2,10 +2,22 @@ import Bird from "../game_objects/bird/bird.js";
 import Boss from "../game_objects/boss/Boss.js";
 import Coins from "../game_objects/coins/coins.js";
 import Planes from "../game_objects/planes/planes.js";
+import Score from "../game_objects/score/score.js";
 import Shots from "../game_objects/shots/shots.js";
 import Walls from "../game_objects/walls/walls.js";
 import Message from "../ui_objects/messge.js";
 import Control from "./control.js";
+
+const increaSc = (() => {
+    let count = 0;
+    return () => {
+        count++;
+        if (count == 20) {
+            count = 0;
+            Score.increa();
+        }
+    };
+})();
 
 const Trigger = (() => {
     const subscribers = [];
@@ -49,6 +61,12 @@ const Trigger = (() => {
         },
         shotUnSub() {
             Control.unSubscibe(Shots.move);
+        },
+        scoreSub() {
+            Control.subscribe(increaSc);
+        },
+        scoreUnSub() {
+            Control.unSubscibe(increaSc);
         },
     };
 

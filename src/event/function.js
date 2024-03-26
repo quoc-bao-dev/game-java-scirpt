@@ -13,9 +13,11 @@ const birdJump = () => {
 
 const birdMoveUp = () => {
     Bird.moveUp();
+    Bird.styleUp();
 };
 const birdMoveDown = () => {
     Bird.moveDown();
+    Bird.styleDown();
 };
 const birdSpeedUp = () => {
     Bird.speedUp();

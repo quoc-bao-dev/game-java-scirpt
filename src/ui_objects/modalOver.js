@@ -1,6 +1,7 @@
 import BlockUI from "../class/Block.UI.js";
 import { ScreenNode } from "../constants/nodeElm.js";
 import Game from "../game_objects/game/game.js";
+import Score from "../game_objects/score/score.js";
 import { Router } from "../routes/index.js";
 
 const ModalOver = (() => {
@@ -22,7 +23,7 @@ const ModalOver = (() => {
         <div class="font-display text-center pt-2">JS Game</div>
         <h1 class="text-center">${state.title}</h1>
         <div class="pt-3 text-gray-500 line-height-3 px-4 flex justify-content-center align-items-center">
-            <p class="get-score">${sc}</p>
+            <p class="get-score" id='modal-score'>${sc}</p>
         </div>
             <div class="pt-5">
                 <div class="flex gap-3 w-fit mx-auto">
@@ -50,15 +51,15 @@ const ModalOver = (() => {
     };
     const show = () => {
         block.mount(ScreenNode.node());
+        if (document.querySelector("#modal-score"))
+            document.querySelector("#modal-score").innerHTML = Score.getScore();
         inintEvent();
     };
     const set = ({ title, content, score }) => {
         if (title) state.title = title;
         if (content) state.content = content;
         if (score) state.score = score;
-        console.log("state", state.score);
         const childNode = child(state.score);
-        console.log(childNode);
         block.setInner(childNode);
     };
 

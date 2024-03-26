@@ -16,14 +16,15 @@
 }
 
 .socer-show {
+    background-color: var(--primary-1);
+}
+
+.group-right {
     position: absolute;
     top: 24px;
     left: 24px;
     z-index: 999;
-
-    background-color: var(--primary-1);
 }
-
 .group-left {
     position: absolute;
     top: 24px;
@@ -59,4 +60,8 @@
 .get-score {
     font-size: 96px;
     font-weight: 900;
+}
+
+#slider img {
+    height: 100%;
 }

@@ -2,6 +2,7 @@ import { PipeClass } from "../../class/Pipe.js";
 import { ScreenNode, ScreenRect } from "../../constants/nodeElm.js";
 import Control from "../../control/control.js";
 import { House } from "../../factory/buildObstacle.js";
+import checkBirdBeat from "../../function/checkBirdBeat.js";
 import { checkCollision } from "../../function/checkCollision.js";
 import Bird from "../bird/bird.js";
 import Game from "../game/game.js";
@@ -60,9 +61,8 @@ const Walls = (() => {
                     state.lenghtStreet -= elm.width;
                     unMountElm(elm);
                 }
-                if (elm.x1 < 200 && checkCollision(Bird.getXY(), elm.getXY())) {
-                    Game.pause();
-                    Game.over();
+                if (elm.x1 < 400) {
+                    checkBirdBeat(elm);
                 }
             });
             listWall.forEach((elm) => {
