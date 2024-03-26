@@ -19,7 +19,7 @@ const Bird = (() => {
         id: "bird",
         x: 100,
         y: 200,
-        width: 150,
+        width: 120,
         height: 50,
         speedY: speedYUp,
         speedDown: speedYDown,

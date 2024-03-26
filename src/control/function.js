@@ -19,7 +19,7 @@ const handleScript = (script) => {
         Coins.render([{ ...script.coin, speedX: 3 }]);
     }
     if (script.plane) {
-        Planes.render([{ ...script.plane, speedX: 4 }]);
+        Planes.render([{ ...script.plane }]);
     }
     if (script.coundown) {
         (async () => {
