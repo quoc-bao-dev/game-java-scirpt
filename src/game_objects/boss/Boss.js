@@ -17,6 +17,9 @@ const Boss = (() => {
         isUpdate: false,
         id: 0,
     };
+    const variants = [
+        "./public/asset/img/boss/boss-0.png",
+    ];
     const boss = new BossClass({
         id: "boss",
         x: 960,
@@ -30,8 +33,11 @@ const Boss = (() => {
         x: 960,
         y: 560 / 2 - 100,
     };
-    boss.setStyle("backgroundColor", "#323212");
+    boss.setStyle("backgroundImage", `url(${variants[0]})`);
+    // boss.setStyle("backgroundColor", "#323212");
     boss.setStyle("z-index", "212");
+    boss.setStyle("backgroundSize", "contain");
+    boss.setStyle("backgroundRepeat", "no-repeat");
 
     const boosGun = () => {
         const id = `shot-${state.id++}`;

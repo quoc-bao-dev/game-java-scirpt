@@ -15,12 +15,15 @@ const Bird = (() => {
         heart: 4,
         immortal: false,
     };
+    const variants = [
+        "./public/asset/img/hero/hero-0.png",
+    ];
     const bird = new BirdClass({
         id: "bird",
         x: 100,
         y: 200,
-        width: 150,
-        height: 50,
+        width: 100 * 1.5,
+        height: 100,
         speedY: speedYUp,
         speedDown: speedYDown,
     });
@@ -28,7 +31,8 @@ const Bird = (() => {
         x: 100,
         y: 200,
     };
-    bird.setStyle("backgroundColor", "#333");
+    // bird.setStyle("backgroundColor", "#333");
+    bird.setStyle("backgroundImage", `url(${variants[0]})`);
     bird.setStyle("z-index", "333");
     bird.setStyle("transition", "transform 0.2s ease");
     return {
@@ -102,7 +106,7 @@ const Bird = (() => {
                         "animation-iteration-infinite"
                     );
                     bird.node().classList.remove("animation-duration-200");
-                }, 1000);
+                }, 2500);
             }
         },
         isImmortal() {

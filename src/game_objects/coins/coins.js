@@ -9,8 +9,11 @@ import Score from "../score/score.js";
 const Coins = (() => {
     const base = manage();
     const variants = [
-        "./public/asset/img/coin/coin-0.png",
         "./public/asset/img/coin/coin-1.png",
+        "./public/asset/img/coin/l-0.png",
+        "./public/asset/img/coin/l-1.png",
+        "./public/asset/img/coin/l-2.png",
+        "./public/asset/img/coin/l-3.png",
     ];
     return {
         ...base,
@@ -22,6 +25,7 @@ const Coins = (() => {
                 // elm.setStyle("backgroundColor", "#fbbc07");
                 elm.setStyle("backgroundImage", `url(${variants[index]})`);
                 elm.setStyle("backgroundSize", "contain");
+                elm.setStyle("backgroundRepeat", "no-repeat");
                 base.mountElm(elm);
             });
         },
