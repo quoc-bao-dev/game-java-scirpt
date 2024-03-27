@@ -15,6 +15,16 @@ const Walls = (() => {
         lenghtStreet: 0,
         lengthScreen: 960,
     };
+    const variants = [
+        "./public/asset/img/building/b-0.png",
+        "./public/asset/img/building/b-1.png",
+        "./public/asset/img/building/b-2.png",
+        "./public/asset/img/building/b-3.png",
+        "./public/asset/img/building/b-4.png",
+        "./public/asset/img/building/b-5.png",
+        "./public/asset/img/building/b-6.png",
+        "./public/asset/img/building/b-7.png",
+    ];
     const listWall = [];
     const mountElm = (elm) => {
         elm.mount(ScreenNode.node());
@@ -33,7 +43,11 @@ const Walls = (() => {
         data.forEach((item) => {
             console.log(item);
             const elm = new PipeClass(item);
-            elm.setStyle("backgroundColor", "#999");
+            const index = item.index
+            // elm.setStyle("backgroundColor", "#999");
+            elm.setStyle("backgroundImage", `url(${variants[index]})`);
+            elm.setStyle("backgroundSize", "contain");
+            // elm.setStyle("backgroundRepeat", "no-repeat");
             mountElm(elm);
         });
     };

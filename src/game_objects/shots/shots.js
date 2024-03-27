@@ -6,7 +6,9 @@ import manage from "../manage/manage.js";
 
 const Shots = (() => {
     const base = manage();
-
+    const variants = [
+        "./public/asset/img/bullets/Absent-0.png",
+    ];
     return {
         ...base,
         logger() {
@@ -16,7 +18,10 @@ const Shots = (() => {
         render(data) {
             data.forEach((item) => {
                 const elm = new ShotClass(item);
-                elm.setStyle("backgroundColor", "#323504");
+                // elm.setStyle("backgroundColor", "#323504");
+                elm.setStyle("backgroundImage", `url(${variants[0]})`);
+                elm.setStyle("backgroundSize", "contain");
+                elm.setStyle("backgroundRepeat", "no-repeat");
                 base.mountElm(elm);
             });
         },
