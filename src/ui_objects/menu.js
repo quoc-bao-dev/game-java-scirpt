@@ -2,6 +2,7 @@ import BlockUI from "../class/Block.UI.js";
 import { ScreenNode } from "../constants/nodeElm.js";
 import Game from "../game_objects/game/game.js";
 import { Router } from "../routes/index.js";
+import Sound from "../sound/sound.js";
 import handleOutsideClick from "./function/handleClickOutSide.js";
 
 const Menu = (() => {
@@ -52,6 +53,13 @@ const Menu = (() => {
     };
     const inintEvent = () => {
         // handleOutsideClick(block.node, ".alert-content", play);
+        const btns = document.querySelectorAll(".btn");
+        btns.forEach((elm) =>
+            elm.addEventListener("click", () => {
+                Sound.click();
+                console.log("sound clcik");
+            })
+        );
         block.node
             .querySelector("#close-alert-btn")
             .addEventListener("click", () => {

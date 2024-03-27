@@ -2,6 +2,7 @@ import Boss from "../game_objects/boss/Boss.js";
 import Coins from "../game_objects/coins/coins.js";
 import Planes from "../game_objects/planes/planes.js";
 import Walls from "../game_objects/walls/walls.js";
+import Sound from "../sound/sound.js";
 import { delay } from "../ui_objects/function/delay.js";
 import Message from "../ui_objects/messge.js";
 import Control from "./control.js";
@@ -45,7 +46,11 @@ const handleScript = (script) => {
         if (b.right) Boss.setBack(b.right);
         if (b.stop) Boss.setStop(b.stop);
 
-        if (b.gun) Boss.gun();
+        if (b.gun) {
+            Boss.gun();
+            Sound.gun();
+        }
+        if (b.laund) Sound.bossLaund();
     }
 };
 

@@ -35,8 +35,11 @@
 
 /* Bird */
 #bird {
-    background-image: url("../../../src/game_objects/bird/img/image2.png");
     background-size: cover;
+    backdrop-filter: blur(10px) #ffd42a;
+    border-radius: 10px; /* Điều chỉnh độ cong của viền nếu cần */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* filter: blur(10px); */
 }
 .rotate-45-up {
     transform: rotate(-15deg);

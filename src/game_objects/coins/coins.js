@@ -1,6 +1,7 @@
 import { CoinClass } from "../../class/Coin.js";
 import { checkCollision } from "../../function/checkCollision.js";
 import randNum from "../../function/randNum.js";
+import Sound from "../../sound/sound.js";
 import scoreAlert from "../../ui_objects/scoreAlert.js";
 import Bird from "../bird/bird.js";
 import manage from "../manage/manage.js";
@@ -39,6 +40,7 @@ const Coins = (() => {
                     base.unMountElm(elm);
                     Score.plus(sc);
                     scoreAlert.show(sc);
+                    Sound.earn();
                 }
             });
             base.list.forEach((elm) => {

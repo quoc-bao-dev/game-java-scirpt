@@ -5,6 +5,7 @@ import Planes from "../game_objects/planes/planes.js";
 import Score from "../game_objects/score/score.js";
 import Shots from "../game_objects/shots/shots.js";
 import Walls from "../game_objects/walls/walls.js";
+import Sound from "../sound/sound.js";
 import Message from "../ui_objects/messge.js";
 import Control from "./control.js";
 
@@ -27,6 +28,9 @@ const Trigger = (() => {
         },
         introGame() {
             Message.countDown(3);
+        },
+        introSound() {
+            Sound.countDown();
         },
         renderWall() {
             Walls.render([Control.getCurScript().house]);

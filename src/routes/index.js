@@ -2,6 +2,7 @@ import { GameScreen } from "../components/GameScreen.js";
 import { StarScreen } from "../components/StartScreen.js";
 import { BrowserNode } from "../constants/nodeElm.js";
 import { initEvent } from "../event/index.js";
+import Sound from "../sound/sound.js";
 
 export const Router = (() => {
     const nav = (route) => {
@@ -9,6 +10,7 @@ export const Router = (() => {
             case "/":
                 BrowserNode.innerHTML = StarScreen();
                 initEvent();
+                Sound.init();
                 break;
             case "game":
                 BrowserNode.innerHTML = GameScreen();

@@ -1,11 +1,7 @@
 import { PipeClass } from "../../class/Pipe.js";
 import { ScreenNode, ScreenRect } from "../../constants/nodeElm.js";
-import Control from "../../control/control.js";
 import { House } from "../../factory/buildObstacle.js";
 import checkBirdBeat from "../../function/checkBirdBeat.js";
-import { checkCollision } from "../../function/checkCollision.js";
-import Bird from "../bird/bird.js";
-import Game from "../game/game.js";
 
 const Walls = (() => {
     const state = {
@@ -41,13 +37,11 @@ const Walls = (() => {
     };
     const render = (data) => {
         data.forEach((item) => {
-            console.log(item);
             const elm = new PipeClass(item);
-            const index = item.index
-            // elm.setStyle("backgroundColor", "#999");
+            const index = item.index;
+            elm.setStyle("backgroundColor", "#999");
             elm.setStyle("backgroundImage", `url(${variants[index]})`);
             elm.setStyle("backgroundSize", "contain");
-            // elm.setStyle("backgroundRepeat", "no-repeat");
             mountElm(elm);
         });
     };

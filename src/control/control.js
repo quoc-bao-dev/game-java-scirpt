@@ -15,6 +15,7 @@ import ModalOver from "../ui_objects/modalOver.js";
 import Slider from "../ui_objects/slider.js";
 import showHeart from "../ui_objects/showHeart.js";
 import User from "../game_objects/user/user.js";
+import Sound from "../sound/sound.js";
 
 const Control = (() => {
     //
@@ -62,6 +63,8 @@ const Control = (() => {
         Trigger.subscribe("scoreUnSub");
         //clear caches
         User.init();
+        Sound.init();
+        Sound.background();
         Bird.reset();
         Boss.reset();
         Walls.clear();
@@ -115,8 +118,7 @@ const Control = (() => {
                 // Game Over
 
                 Game.setIsEnd(true);
-                ModalOver.set({ title: "You Win!!!", score: Score.getScore() });
-                ModalOver.show();
+                Game.win();
             }
         }
 

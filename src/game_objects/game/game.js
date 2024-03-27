@@ -1,4 +1,5 @@
 import animate from "../../animate/main.js";
+import Sound from "../../sound/sound.js";
 import ModalOver from "../../ui_objects/modalOver.js";
 import Score from "../score/score.js";
 
@@ -25,9 +26,15 @@ const Game = (() => {
     const over = () => {
         state.isPause = true;
         state.isEnd = true;
-        console.log(Score.getScore());
         const sc = Score.getScore();
+        Sound.gameOver();
         ModalOver.set({ title: "Game Over T_T", score: sc });
+        ModalOver.show();
+    };
+
+    const win = () => {
+        Sound.gameWin();
+        ModalOver.set({ title: "You Win!!!", score: Score.getScore() });
         ModalOver.show();
     };
 
@@ -40,6 +47,7 @@ const Game = (() => {
         setIsPause,
         isEnd,
         setIsEnd,
+        win,
     };
 })();
 export default Game;

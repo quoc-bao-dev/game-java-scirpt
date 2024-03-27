@@ -1,14 +1,13 @@
 import { ShotClass } from "../../class/Shot.js";
 import checkBirdBeat from "../../function/checkBirdBeat.js";
 import { checkCollision } from "../../function/checkCollision.js";
+import Sound from "../../sound/sound.js";
 import Bird from "../bird/bird.js";
 import manage from "../manage/manage.js";
 
 const Shots = (() => {
     const base = manage();
-    const variants = [
-        "./public/asset/img/bullets/Absent-0.png",
-    ];
+    const variants = ["./public/asset/img/bullets/Absent-0.png"];
     return {
         ...base,
         logger() {
@@ -35,6 +34,7 @@ const Shots = (() => {
                     checkBirdBeat(elm);
                     if (checkCollision(elm.getXY(), Bird.getXY())) {
                         base.unMountElm(elm);
+                        Sound.gong();
                     }
                 }
             });

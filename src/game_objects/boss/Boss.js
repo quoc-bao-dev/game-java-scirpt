@@ -17,9 +17,7 @@ const Boss = (() => {
         isUpdate: false,
         id: 0,
     };
-    const variants = [
-        "./public/asset/img/boss/boss-0.png",
-    ];
+    const variants = ["./public/asset/img/boss/boss-0.png"];
     const boss = new BossClass({
         id: "boss",
         x: 960,
@@ -72,14 +70,14 @@ const Boss = (() => {
         },
         move() {
             if (counter.frameUp > 0) {
-                if (boss.y1 > 0) boss.moveUp();
+                if (boss.y1 > -40) boss.moveUp();
                 counter.frameUp--;
                 if (counter.frameUp <= 0) {
                     state.isUpdate = true;
                 }
             }
             if (counter.frameDown > 0) {
-                if (boss.y2 < 560) boss.moveDown();
+                if (boss.y2 < 700) boss.moveDown();
                 counter.frameDown--;
                 if (counter.frameDown <= 0) {
                     state.isUpdate = true;

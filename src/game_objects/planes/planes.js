@@ -1,9 +1,5 @@
 import { PipeClass } from "../../class/Pipe.js";
 import checkBirdBeat from "../../function/checkBirdBeat.js";
-import { checkCollision } from "../../function/checkCollision.js";
-import showHeart from "../../ui_objects/showHeart.js";
-import Bird from "../bird/bird.js";
-import Game from "../game/game.js";
 import manage from "../manage/manage.js";
 
 const Planes = (() => {

@@ -4,6 +4,7 @@ import Control from "../control/control.js";
 import Game from "../game_objects/game/game.js";
 import Score from "../game_objects/score/score.js";
 import { Router } from "../routes/index.js";
+import Sound from "../sound/sound.js";
 
 const ModalOver = (() => {
     const block = new BlockUI({ id: "modal-over" });
@@ -47,6 +48,13 @@ const ModalOver = (() => {
         Control.start();
     };
     const inintEvent = () => {
+        const btns = document.querySelectorAll(".btn");
+        btns.forEach((elm) =>
+            elm.addEventListener("click", () => {
+                Sound.click();
+                console.log("sound clcik");
+            })
+        );
         block.node.querySelector("#home-btn").onclick = goHome;
         block.node.querySelector("#restart-btn").onclick = restart;
     };
