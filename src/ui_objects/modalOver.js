@@ -42,7 +42,6 @@ const ModalOver = (() => {
         Router.nav("/");
     };
     const restart = () => {
-        console.log("restart");
         Game.setIsEnd(true);
         Router.nav("game");
         Control.start();
@@ -52,7 +51,6 @@ const ModalOver = (() => {
         btns.forEach((elm) =>
             elm.addEventListener("click", () => {
                 Sound.click();
-                console.log("sound clcik");
             })
         );
         block.node.querySelector("#home-btn").onclick = goHome;

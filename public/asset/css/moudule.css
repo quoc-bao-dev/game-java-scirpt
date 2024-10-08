@@ -15,7 +15,11 @@
     color: white;
     display: inline-block;
     font-size: 20px;
+    font-weight: 600;
     cursor: pointer;
+}
+.btn:hover {
+    background-color: #ffc400;
 }
 .btn-sm {
     padding: 8px 24px;
@@ -36,10 +40,6 @@
 /* Bird */
 #bird {
     background-size: cover;
-    backdrop-filter: blur(10px) #ffd42a;
-    border-radius: 10px; /* Điều chỉnh độ cong của viền nếu cần */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* filter: blur(10px); */
 }
 .rotate-45-up {
     transform: rotate(-15deg);
@@ -48,6 +48,11 @@
     transform: rotate(15deg);
 }
 
+.bird-cover {
+    backdrop-filter: blur(10px) #ffd42a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 221, 4, 0.5);
+}
 .bird-immortal {
     opacity: 50%;
 }
@@ -66,4 +71,8 @@
 
 .circle {
     border-radius: 999px;
+}
+
+.grid-custom {
+    margin-bottom: -8px;
 }

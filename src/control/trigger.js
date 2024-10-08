@@ -84,7 +84,6 @@ const Trigger = (() => {
             triggerMenu[cbKey]();
         });
         subscribers.length = 0;
-        console.log(subscribers);
     };
     return {
         subscribe,

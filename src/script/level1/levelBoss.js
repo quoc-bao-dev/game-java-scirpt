@@ -153,9 +153,20 @@ export const scriptBoss = [
     {
         boss: {
             stop: 10,
-            up: 500,
+            up: 400,
             right: 250,
             gun: true,
+        },
+    },
+    {
+        boss: {
+            stop: 10,
+            laund: true,
+        },
+    },
+    {
+        boss: {
+            stop: 100,
         },
     },
     {
@@ -215,11 +226,11 @@ export const scriptBoss = [
             up: 200,
             right: 100,
             gun: true,
-            laund: true,
         },
     },
     {
         boss: {
+            laund: true,
             stop: 10,
             gun: true,
         },

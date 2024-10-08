@@ -1,3 +1,0 @@
-const Cotrol = (block) => {
-    return {};
-};

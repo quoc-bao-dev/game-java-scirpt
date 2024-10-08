@@ -21,7 +21,7 @@ const Message = (() => {
         <div class="flex justify-content-center align-items-center pt-3 pb-1">
             <div class="count-alert flex justify-content-center align-items-center bg-gray-100 " id='counter'>${state.count}</div>
         </div>
-        <p class="pt-3 text-white text-center text-4xl line-height-3 px-4">${state.content}</p>
+        <p class="pt-3 text-white text-center text-2xl line-height-2 px-4">${state.content}</p>
     </div>
     `;
     block.setInner(child());
@@ -51,7 +51,6 @@ const Message = (() => {
     const set = ({ title, content }) => {
         if (title) state.title = title;
         if (content) state.content = content;
-        console.log(state);
         block.setInner(child());
     };
 

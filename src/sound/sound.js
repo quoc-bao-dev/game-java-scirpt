@@ -1,5 +1,4 @@
 import BlockUI from "../class/Block.UI.js";
-import { ScreenNode } from "../constants/nodeElm.js";
 
 const Sound = (() => {
     const block = new BlockUI("sound");
@@ -64,7 +63,7 @@ const Sound = (() => {
     `;
 
     const sound11 = `
-    <audio id="sound-background">
+    <audio id="bg-sound-background">
         <source src="./public/asset/sound/background.mp3" loop type="audio/mpeg">
     </audio>
     `;
@@ -78,7 +77,12 @@ const Sound = (() => {
     };
     const playSn = (selt) => {
         const sound = document.querySelector(selt);
+        sound.currentTime = 0;
         sound.play();
+    };
+    const pauseSn = (selt) => {
+        const sound = document.querySelector(selt);
+        sound.pause();
     };
     const earn = () => {
         playSn("#sound-earn-coin");
@@ -87,6 +91,7 @@ const Sound = (() => {
         playSn("#sound-hit-to-wall");
     };
     const gun = () => {
+        pauseSn("#sound-boss-gun");
         playSn("#sound-boss-gun");
     };
     const bossLaund = () => {
@@ -102,6 +107,7 @@ const Sound = (() => {
     };
 
     const click = () => {
+        pauseSn("#sound-mouse-click");
         playSn("#sound-mouse-click");
     };
 
@@ -117,10 +123,25 @@ const Sound = (() => {
         playSn("#sound-count-down");
     };
     const background = () => {
-        playSn("#sound-background");
-        document.querySelector("#sound-background").volume = 0.1;
-        document.querySelector("#sound-background").playbackRate = 1.5;
+        playSn("#bg-sound-background");
+        document.querySelector("#bg-sound-background").volume = 0.3;
+        document.querySelector("#bg-sound-background").playbackRate = 1.7;
     };
+    const setBackground = (value) => {
+        document.querySelector("#bg-sound-background").volume = value;
+    };
+    const setVolumeAll = (value) => {
+        const elements = document.querySelectorAll('[id^="sound"]');
+        if (elements.length > 0)
+            elements.forEach((item) => {
+                item.volume = value;
+            });
+    };
+    const getBgVolume = () =>
+        document.querySelector("#bg-sound-background").volume;
+    const getEffectVolume = () =>
+        document.querySelector("#sound-mouse-click").volume;
+
     return {
         init,
         earn,
@@ -134,6 +155,10 @@ const Sound = (() => {
         gameWin,
         countDown,
         background,
+        setBackground,
+        setVolumeAll,
+        getBgVolume,
+        getEffectVolume,
     };
 })();
 

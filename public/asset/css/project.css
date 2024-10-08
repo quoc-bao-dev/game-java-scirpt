@@ -114,3 +114,7 @@
     text-overflow: ellipsis;
     padding-left: 80px !important;
 }
+
+.top-user {
+    width: 600px;
+}

@@ -33,24 +33,18 @@ const Control = (() => {
         const index = subscribers.indexOf(cb);
         if (index == -1) {
             subscribers.push(cb);
-            console.log("Callback subscribed");
         } else {
-            console.log("Callback is exist", `${cb}`);
         }
     };
     const unSubscibe = (cb) => {
         const index = subscribers.indexOf(cb);
         if (index !== -1) {
             subscribers.splice(index, 1);
-            console.log("Callback was remove");
         } else {
-            console.log("Callback not found in array.");
         }
-        console.log(subscribers);
     };
 
     const setScript = () => {
-        console.log("cur index", curIndex);
         curScript = scripts[curIndex];
         curIndex++;
     };
@@ -63,7 +57,6 @@ const Control = (() => {
         Trigger.subscribe("scoreUnSub");
         //clear caches
         User.init();
-        Sound.init();
         Sound.background();
         Bird.reset();
         Boss.reset();

@@ -1,3 +1,4 @@
+import Sound from "../sound/sound.js";
 import { eventHandler } from "./function.js";
 import { keyboard } from "./keyboard.js";
 import { mouse } from "./mouse.js";
@@ -16,6 +17,7 @@ const sKeyPress = eventHandler.birdMoveDown;
 const spaceKeyPress = eventHandler.birdSpeedUp;
 
 export const initEvent = () => {
+    Sound.init();
     mouse();
     keyboard({
         enterKey,

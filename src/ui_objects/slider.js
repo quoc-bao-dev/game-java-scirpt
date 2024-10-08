@@ -11,7 +11,6 @@ const Slider = (() => {
         curX = 0;
         curW = 0;
         const container = document.getElementById("slider");
-        console.log(container);
         for (let i = 0; i < imageUrls.length; i++) {
             const img = document.createElement("img");
             img.src = imageUrls[i];
@@ -19,8 +18,6 @@ const Slider = (() => {
                 img.classList += " absolute";
                 img.style.left = `${curX}px`;
                 curX += 1285;
-                console.log(1285);
-                console.dir(img);
                 imageElements.push(img);
                 container.appendChild(img);
                 if (curW <= 0) {
@@ -43,7 +40,6 @@ const Slider = (() => {
         });
     };
 
-    // Gọi hàm slide mỗi 10ms
     return { intit, scroll };
 })();
 

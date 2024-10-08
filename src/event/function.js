@@ -7,6 +7,7 @@ const pauseGame = () => {};
 const startGame = () => {
     const userName = document.querySelector("#user-name-input").value;
     User.setUserName(userName);
+    localStorage.setItem("name", userName);
     Router.nav("game");
     Control.start();
 };

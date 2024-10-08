@@ -91,15 +91,14 @@ const Bird = (() => {
                 state.heart--;
                 state.immortal = true;
                 bird.node().classList.add("fadein");
+                bird.node().classList.add("bird-cover");
                 bird.node().classList.add("animation-iteration-infinite");
                 bird.node().classList.add("animation-duration-200");
-                console.log("immortal");
-                console.log(state.heart);
 
                 setTimeout(() => {
                     state.immortal = false;
-                    console.log("immortal end");
                     bird.node().classList.remove("fadein");
+                    bird.node().classList.remove("bird-cover");
                     bird.node().classList.remove(
                         "animation-iteration-infinite"
                     );
