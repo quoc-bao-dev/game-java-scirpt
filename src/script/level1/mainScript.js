@@ -8,7 +8,7 @@ export const mainScript = [
     {
         triggers: ['wallMove', 'planeMove', 'coinMove', 'scoreSub'],
     },
-    // ...scriptLv1,
+    ...scriptLv1,
     {
         distant: 1200,
     },
